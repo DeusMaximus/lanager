@@ -57,7 +57,7 @@ $navbar =
         ],
     ];
 
-echo Navbar::create(Navbar::NAVBAR_TOP)->withBrand('<img src="'.asset('img/logo.png').'" width="82" height="29" alt="LANager Logo">')
+echo Navbar::create(Navbar::NAVBAR_TOP)->withBrand('<img src="'.asset('img/GreenLANLogo_official.svg').'" width="55" height="48" alt="GreenLAN">')
     ->withContent(
         Navigation::links($navbar)
     )

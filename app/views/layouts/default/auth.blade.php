@@ -15,8 +15,8 @@
         </li>
     @else
         <li>
-            <a href="{{ URL::route('sessions.create') }}" class="navbar-signin"><img src="{{ asset('/img/sits_small.png') }}"
-                                                                                     width="154" height="23"></a>
+            <a href="{{ URL::route('sessions.create') }}" class="navbar-signin"><img src="{{ asset('/img/sits_01.png') }}"
+                                                                                     width="180" height="35"></a>
         </li>
     @endif
 </ul>
