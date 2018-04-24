@@ -9,7 +9,7 @@
         </div>
         <div class="col-lg-8 col-centered">
             <a href="{{ $steamAuthUrl }}" title="Click here to sign into the LANager using your Steam ID">
-                <img src="{{ asset('/img/sits_large_noborder.png') }}" alt="Sign in through Steam Logo">
+                <img src="{{ asset('/img/sits_02.png') }}" alt="Sign in through Steam Logo">
             </a>
         </div>
         <div class="col-lg-8 col-centered">

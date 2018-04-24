@@ -32,7 +32,10 @@ class SessionsController extends Controller
 
         // Steam OpenID Login URL - cached for 1 day due to request time
         $steamAuthUrl = Cache::remember('steamAuthUrl', 60 * 24, function () {
-            $openId = new LightOpenID(Request::server('HTTP_HOST'));
+//
+//            $openId = new LightOpenID(Request::server('HTTP_HOST'));
+//
+            $openId = new LightOpenID(Request::server('SERVER_NAME'));
 
             $openId->identity = 'http://steamcommunity.com/openid';
             $openId->returnUrl = URL::route('sessions.create');
@@ -54,7 +57,8 @@ class SessionsController extends Controller
     {
         // If session is from a Steam OpenID
         if (str_contains(Input::get('openid_op_endpoint'), 'steamcommunity.com')) {
-            $openId = new LightOpenID(Request::server('HTTP_HOST'));
+//            $openId = new LightOpenID(Request::server('HTTP_HOST'));
+            $openId = new LightOpenID(Request::server('SERVER_NAME'));
             if ($openId->validate()) {
                 $user = UserImport::fromSteam(substr($openId->identity, -17));
                 Auth::login($user);
